@@ -1,0 +1,427 @@
+
+What is Automated testing
+What to automate
+What consider to choose automated testing tool
+What is Selenium
+Selenium components
+Selenium Webdriver
+Selenium Webdriver architecture
+Selenium setup
+Download ChromeDriver
+First selenium test script using chrome browser
+Selenium WebElement commands
+Selenium Locators
+Selenium css selectors
+Selenium Xpath
+Selenium wait commands
+Selenium time-outs
+Selenium action class
+How to handle multiple windows
+How to handle alert and PopUp window
+How to handle Dropdown using Select class
+How to handle web table elements
+Selenium page object model
+
+
+   
+locator techniques:
+
+ID
+ClassName
+Name
+TagName
+LinkText
+PartialLinkText
+Xpath
+CSS Selector
+DOM
+
+
+//input[@type='text'][@name='txtUsername']
+//a[contains(text(),'Forgot')]
+//div[text()='LOGIN Panel']
+
+ 
+
+//input[starts-with(@name,'txtUser')]
+//input[starts-with(@name,'txtU') or @id='txtUsername']
+//input[starts-with(@name,'txtU') and @id='txtUsername']
+
+
+
+List<WebElement>list=driver.findElements(By.tagName("a"));
+        Iterator<WebElement> i=list.iterator();
+        while(i.hasNext())
+        {
+            System.out.println(i.next().getText());
+        }
+
+ Assignments:-
+ 1) Set up
+    JDK
+    GoogleChrome
+    Eclipse/STS
+
+2) search text box example with Google
+3) Any login page
+    Enter username
+    Enter password
+        Hit the button 
+
+4)WebElements
+
+List<WebElement>list=driver.findElements(By.tagName("a"));
+        Iterator<WebElement> i=list.iterator();
+        while(i.hasNext())
+        {
+            System.out.println(i.next().getText());
+        }
+5) All locator techniques
+ID
+ClassName
+Name
+TagName
+LinkText
+PartialLinkText
+Xpath
+CSS Selector.....
+ e.g.   WebElement images=driver.findElement(By.linkText("Images"));
+        images.click();...........
+		
+6)xpath validation practice on Developer tools
+   Try different syntax
+   WebElement search = driver.findElement(By.xpath("//input[@name='q']"));
+//input[@type='text'][@name='txtUsername']
+//a[contains(text(),'Forgot')]
+//div[text()='LOGIN Panel']
+//input[starts-with(@name,'txtUser')]
+//input[starts-with(@name,'txtU') or @id='txtUsername']
+//input[starts-with(@name,'txtU') and @id='txtUsername']
+
+
+7) Find out any plugin to test xpath value (Optional)
+
+8)Capture Alert value
+e.g.
+  Alert alert = driver.switchTo().alert();
+System.out.println(alert.getText());
+how to accept or dismiss ?
+
+9) Try at least 5 new methods
+
+10) Navigation on any web site
+e.g. Amazon - select products ....upto payment page
+      Redbus - select seat......upto payment page
+      Can try with any web site
+================================================================
+/*Search handling, cliking non first element from search result*/
+    
+package com.capgemini.myfirstseleniumdemo;
+
+import java.util.List;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+public class GoogleTest {
+ public static void main(String[] args) throws InterruptedException {
+System.setProperty("webdriver.chrome.driver","C:\\Users\\sumunta\\eclipse-workspace\\Selenium\\src\\Drivers\\chromedriver.exe");
+WebDriver driver = new ChromeDriver();
+driver.get("http://www.google.com");
+driver.manage().window().maximize();
+WebElement Searchbox = driver.findElement(By.name("q"));
+Searchbox.sendKeys("IBM");
+Thread.sleep(2000);
+driver.findElement(By.xpath(".//div[@class='aajZCb']"));
+List<WebElement>b = driver.findElements(By.xpath("//ul/li/div/div[@class='sbtc']"));
+for(WebElement c:b) {
+String names = c.getText();
+System.out.println(names);
+
+System.out.println(names);
+if (c.getText().contains("ibm cloud")) {
+c.click();
+}
+
+ }
+}
+}
+
+====================================================================
+
+/*Tab Handling*/
+
+    public static void main(String[] args) throws InterruptedException {
+        // TODO Auto-generated method stub
+        System.setProperty("webdriver.chrome.driver", "./Drivers/chromedriver.exe");
+       
+        ChromeDriver driver = new ChromeDriver();
+               
+        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS)    ;
+       
+        driver.manage().window().maximize();
+       
+        driver.get("https://www.amazon.in/");
+       
+        WebElement searchbox = driver.findElement(By.id("twotabsearchtextbox"));
+        searchbox.sendKeys("samsung m21");
+        searchbox.submit();
+       
+        String firstWndName = driver.getWindowHandle();
+        WebElement link1 = driver.findElement(By.xpath("(//a[contains(.,'Samsung Galaxy M21')])[1]"));
+        link1.click();
+        Thread.sleep(1000);
+       
+        for(String handlename:driver.getWindowHandles()) {
+            if(!handlename.equals(firstWndName)){
+                driver.switchTo().window(handlename);
+                Thread.sleep(1000);
+                WebElement addtocart = driver.findElement(By.xpath("//input[contains(@value,'Add to Cart')]"));
+                addtocart.click();
+            }
+        }
+        driver.quit();
+    }
+ 
+==============================================================================
+/**Tab handling , another way*/
+
+/*Navigation through Google tabs and selection of particular search result:*/
+
+ 
+package com.capgemini.myfirstseleniumdemo;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+
+public class TrainingDay1 {
+
+
+    public static void main(String[] args) {
+        // TODO Auto-generated method stub
+        System.setProperty("webdriver.chrome.driver","C:\\Users\\astanly\\Documents\\Selenium\\chromedriver_win32\\chromedriver.exe");
+        
+        WebDriver driver = new ChromeDriver();
+        
+        driver.get("https://www.google.com/");
+        driver.manage().window().maximize();
+        //WebElement search = driver.findElement(By.name("q"));
+        WebElement search = driver.findElement(By.xpath("//input [@name=\"q\"]"));
+        search.sendKeys("Anila Stanly");
+        search.submit();
+        WebElement image = driver.findElement(By.linkText("Images"));
+        image.click();
+        WebElement news = driver.findElement(By.linkText("News"));
+        news.click();
+    
+       WebElement correction = driver.findElement(By.xpath("//a[@class=\"gL9Hy\"]")); 
+       correction.click();
+       //selected the second search result started with "Peter Sajan.."
+         WebElement toRead = driver.findElement(By.xpath("//a[contains(.,'Peter Sajan on his')]"));
+         toRead.click();
+         
+    //driver.close();
+        
+    }
+
+}
+ 
+============================================================================================== 
+
+
+****window handle****
+   
+Set<String> windowIds = driver.getWindowHandles();
+Iterator<String> it = windowIds.iterator();
+
+
+String mainWindow = it.next();
+String childWindow =it.next();
+driver.switchTo().window(childWindow);
+print title
+driver.close() - close child window
+sleep()
+driver.switchTo().window(mainWindow);
+print title
+
+
+Writing helper method(Easy way) =>
+
+
+index  1 -> main window
+index  2 -> child window
+public static void switchToWindow(int index)
+{
+    String windowId = null;
+    Set<String> windowIds = driver.getWidowHandles();
+   Iterator<String> it = windowIds.iterator();
+   for(int i=1;i<=index;i++)
+   {
+        windowId = it.next();
+   }
+   driver.switchTo().window(windowId);
+}
+
+
+
+switchToWindow(2);
+get title
+sleep
+driver.close();
+switchToWindow(1);
+get title
+
+
+
+Web Table/HTML table
+--------------------------
+Product   Article   Price
+
+
+Browser path
+file:///c:/selenium/sampletable.html
+
+
+html/body/table/tbody/tr[3]/td[2]
+
+
+Example:
+System.setProperty("webdriver.chrome.driver","C:\\Selenium\\Softwares\\New_Chrome_Driver\\chromedriver.exe");
+
+
+WebDriver driver = new ChromeDriver();
+driver.get("file:///c:/selenium/sample.html");
+
+
+int rows= driver.findElements(By.xpath("html/body/table/tbody/tr")).size();
+System.out.println(rows);
+
+
+
+int columns= driver.findElements(By.xpath("html/body/table/tbody/tr/th")).size();
+System.out.println(columns);
+
+
+for(int i=2;i<=rows;i++)
+{
+  for(int j=1;j<=columns;j++)
+   {
+  S.o.p(   driver.findElement(By.xpath("html/body/table/tbody/tr["+i+"]/td["+j+"]")).getText()  );
+   }
+
+=================================================================================================
+
+********Counting rows and columns***********
+
+int rows= driver.findElements(By.xpath("html/body/table/tbody/tr")).size();
+System.out.println(rows);
+
+ 
+
+
+int columns= driver.findElements(By.xpath("html/body/table/tbody/tr/th")).size();
+System.out.println(columns);
+
+====================================================================================================
+
+**Handling window**
+
+    
+## Handling multiple windows  and print Page Title ##
+
+
+System.out.println("Parent tab Title is:  "+ driver.getTitle());
+       
+        ArrayList<String> newTab = new ArrayList<String>(driver.getWindowHandles());
+        driver.switchTo().window(newTab.get(1));
+       
+        //Childwindow title
+        System.out.println("Child tab Title is:  "+ driver.getTitle());
+       
+        //Switchbackto parentwindow
+        driver.switchTo().window(newTab.get(0));
+        System.out.println("came back to Parent tab and Title is:  "+ driver.getTitle());
+
+========================================================================================================
+
+driver.get("file:///c:/selenium/sample.html");
+
+ 
+
+int rows= driver.findElements(By.xpath("html/body/table/tbody/tr")).size();
+System.out.println(rows);
+
+ 
+
+
+int columns= driver.findElements(By.xpath("html/body/table/tbody/tr/th")).size();
+System.out.println(columns);
+
+ 
+
+for(int i=2;i<=rows;i++)
+{
+  for(int j=1;j<=columns;j++)
+   {
+  S.o.p(   driver.findElement(By.xpath("html/body/table/tbody/tr["+i+"]/td["+j+"]")).getText()  );
+   }
+ }
+
+===================================================================================================
+
+package com.capgemini.myfirstseleniumdemo;
+
+ 
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+ 
+
+public class Table {
+
+ 
+
+    public static void main(String[] args) {
+        System.setProperty("webdriver.chrome.driver","C:\\Selenium\\Softwares\\New_Chrome_Driver\\chromedriver.exe");
+
+ 
+
+        WebDriver driver = new ChromeDriver();
+        driver.get("C:\\Selenium\\HTML\\table.html");
+
+ 
+
+        int rows= driver.findElements(By.xpath("html/body/table/tbody/tr")).size();
+        System.out.println(rows);
+
+ 
+
+
+        int columns= driver.findElements(By.xpath("html/body/table/tbody/tr/th")).size();
+        System.out.println(columns);
+
+ 
+
+        for(int i=2;i<=rows;i++)
+        {
+          for(int j=1;j<=columns;j++)
+           {
+          System.out.println(   driver.findElement(By.xpath("html/body/table/tbody/tr["+i+"]/td["+j+"]")).getText()  );
+           }
+
+ 
+
+
+    }
+
+ 
+
+    }
+}
+============================================================================================== 
+   
