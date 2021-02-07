@@ -12,11 +12,13 @@ public class AmazonTest {
 
 	public static void main(String[] args) {
 		
-		System.setProperty("webdriver.chrome.driver", "G:\\Class-Selenium\\BrowserDriver\\ChromeDriver\\2020\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver","C:\\Users\\MukeshHP\\Downloads\\chromedriver_win32\\chromedriver.exe");
 		WebDriver driver=new ChromeDriver();
 		
 		driver.get("https://www.amazon.in/");
 		driver.manage().window().maximize();
+		
+		System.out.println(driver.manage().getCookies());
 		
 		WebElement searchProduct=driver.findElement(By.xpath("//input[@id='twotabsearchtextbox']"));
 		
