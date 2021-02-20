@@ -4,7 +4,11 @@ public class BeforeMainTest {
 
 	static
 	{
-		System.out.println("Before main method");
+		System.out.println("Static block # 1");
+	}
+	static
+	{
+		System.out.println("Static block # 2");
 	}
 	
 	public static void main(String[] args) {
@@ -12,5 +16,10 @@ public class BeforeMainTest {
 		System.out.println("Inside main methond");
 
 	}
+	static
+	{
+		System.out.println("Static block # 3");
+	}
+	
 
 }
