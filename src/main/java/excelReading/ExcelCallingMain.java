@@ -10,6 +10,7 @@ public class ExcelCallingMain {
 		ExcelReader.getData("TC1", "LastName");
 		ExcelReader.getData("TC2", "FirstName");
 		ExcelReader.getData("TC1", "FirstName");
+		ExcelReader.getData("TC2", "LastName");
 
 
 	}
