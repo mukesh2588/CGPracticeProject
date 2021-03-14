@@ -9,6 +9,7 @@ public class ExcelCallingMain {
 		ExcelReader.readTestData("F:\\EclipseWorkspace\\CGPracticeProject\\", "TestData.xlsx", "Sheet1");
 		ExcelReader.getData("TC1", "LastName");
 		ExcelReader.getData("TC2", "FirstName");
+		ExcelReader.getData("TC1", "FirstName");
 
 
 	}
