@@ -21,7 +21,8 @@ public class ExcelReader {
 	
 	public static void readTestData(String filePath, String workbookName, String sheetName) throws IOException
 	{
-		String excelFilePath= "F:\\EclipseWorkspace\\CGPracticeProject\\TestData.xlsx";
+	    String excelFilePath= "C:\\Users\\mkhedkar\\eclipse-workspace\\CGPracticeProject\\TestData.xlsx";
+		
 		FileInputStream fis= new FileInputStream(excelFilePath);
 		wb=new XSSFWorkbook(fis);
 		sheet= wb.getSheet(sheetName) ;
