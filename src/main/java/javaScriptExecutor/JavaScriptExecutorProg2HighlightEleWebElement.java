@@ -19,7 +19,7 @@ public class JavaScriptExecutorProg2HighlightEleWebElement {
 		WebElement loginID=driver.findElement(By.id("txtLoginID"));
 		
 		
-		//Finding element with Java script and performing highlight using Javascript
+		//Finding element with WebDriver and performing highlight using Javascript
 
 		JavascriptExecutor js=(JavascriptExecutor) driver;
 		
