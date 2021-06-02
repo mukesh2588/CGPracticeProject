@@ -16,6 +16,8 @@ public class ContextNDoubleClick1 {
 		
 		driver.get("http://demo.guru99.com/test/newtours/");
 		
+		
+		
 		JavascriptExecutor js=(JavascriptExecutor)driver;
 		js.executeScript("window.scrollBy(0,300)");
 		
