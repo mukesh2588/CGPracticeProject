@@ -10,7 +10,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 public class WindowHandleDemo {
 
 	public static void main(String[] args) {
-		System.setProperty("webdriver.chrome.driver", "C:\\\\Users\\\\MukeshHP\\\\Downloads\\\\chromedriver_win32\\\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\mkhedkar\\eclipse-workspace\\ChromeDriver\\chromedriver.exe");
 		WebDriver driver=new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.get("http://demo.guru99.com/popup.php");

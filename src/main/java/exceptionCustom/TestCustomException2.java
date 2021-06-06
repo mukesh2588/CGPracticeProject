@@ -7,7 +7,7 @@ public class TestCustomException2 {
 			throw new MyException("MK test");
 			
 		} catch (Exception e) {
-			System.out.println("Cought");
+			System.out.println("Caught");
 			System.out.println(e.getMessage());
 			
 		}
