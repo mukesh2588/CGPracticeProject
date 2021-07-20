@@ -9,7 +9,7 @@ import org.openqa.selenium.support.ui.Select;
 public class DropdownListMultiple {
 
 	public static void main(String[] args) {
-		System.setProperty("webdriver.chrome.driver", "C:\\Users\\mkhedkar\\eclipse-workspace\\ChromeDriver\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "F:\\EclipseWorkspace\\ChromeDriverLatest\\chromedriver.exe");
 		WebDriver driver=new ChromeDriver();
 		driver.get("https://output.jsbin.com/osebed/2");
 		

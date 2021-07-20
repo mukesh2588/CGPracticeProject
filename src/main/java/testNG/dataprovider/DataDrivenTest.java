@@ -21,7 +21,7 @@ public class DataDrivenTest
 	public void launchBrowser()
 	{
 	//	System.setProperty("webdriver.chrome.driver", driverpath);
-		System.setProperty("webdriver.chrome.driver", "C:\\\\Users\\\\mkhedkar\\\\eclipse-workspace\\\\ChromeDriver\\\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "F:\\EclipseWorkspace\\ChromeDriverLatest\\chromedriver.exe");
 		driver=new ChromeDriver();
 		
 	}
