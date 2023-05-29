@@ -1,7 +1,5 @@
 package stingProgs;
 
-import org.apache.poi.util.SystemOutLogger;
-
 public class SubSting
 {
     public static void main(String [] args)

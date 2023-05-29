@@ -20,7 +20,7 @@ public class DropdownList {
 		//drpDwn.selectByIndex(2);
 		//drpDwn.selectByValue("1");
 		drpDwn.selectByVisibleText("Option 2");
-		
+				
 		
 		
 		
