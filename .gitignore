@@ -6,6 +6,8 @@
 .project
 .settings
 .springBeans
+<<<<<<< HEAD
 .sts4-cache
 /test-output/
 /target/
+.sts4-cache
