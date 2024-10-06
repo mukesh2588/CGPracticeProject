@@ -16,14 +16,14 @@ import excelLib.ExcelDataConfig;
 public class DataDrivenTestReadingFromExcel
 {
 
-	//String driverpath="C:\\\\Users\\\\mkhedkar\\\\eclipse-workspace\\\\ChromeDriver\\\\chromedriver.exe";
+	//String driverpath="src/main/resources/drivers/chromedriver.exe";
 	WebDriver driver;
 
 	@BeforeMethod
 	public void launchBrowser()
 	{
 	//	System.setProperty("webdriver.chrome.driver", driverpath);
-		System.setProperty("webdriver.chrome.driver", "C:\\\\Users\\\\mkhedkar\\\\eclipse-workspace\\\\ChromeDriver\\\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "src/main/resources/drivers/chromedriver.exe");
 		driver=new ChromeDriver();
 		
 	}

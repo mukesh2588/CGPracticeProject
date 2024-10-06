@@ -13,7 +13,7 @@ public class App
 {
     public static void main( String[] args )
     {
-         System.setProperty("webdriver.chrome.driver", "G:\\Class-Selenium\\BrowserDriver\\ChromeDriver\\2020\\chromedriver.exe");
+         System.setProperty("webdriver.chrome.driver", "src/main/resources/drivers/chromedriver.exe");
          WebDriver driver=new ChromeDriver();  
          driver.get("http://maven.apache.org");
          driver.manage().window().maximize();

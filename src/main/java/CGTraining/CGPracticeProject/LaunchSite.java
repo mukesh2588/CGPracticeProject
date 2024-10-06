@@ -14,7 +14,7 @@ public class LaunchSite {
 	public static void main(String[] args) {
 	//	Properties prop=new Properties();
 		Properties prop=new Properties();
-		System.setProperty("webdriver.chrome.driver", "C:\\Users\\MukeshHP\\Downloads\\chromedriver_win32\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "src/main/resources/drivers/chromedriver.exe");
 		WebDriver driver=new ChromeDriver();
 		//driver.get("https://beginnersbook.com/2013/03/oops-in-java-encapsulation-inheritance-polymorphism-abstraction/");
 		
