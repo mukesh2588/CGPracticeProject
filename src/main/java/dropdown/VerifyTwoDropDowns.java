@@ -14,7 +14,7 @@ import org.testng.Assert;
 public class VerifyTwoDropDowns {
 
 	public static void main(String[] args) {
-		System.setProperty("webdriver.chrome.driver", "C:\\Users\\mkhedkar\\eclipse-workspace\\ChromeDriver\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "src/main/resources/drivers/chromedriver.exe");
 		WebDriver driver=new ChromeDriver();
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		driver.get("https://chercher.tech/practice/dropdowns");

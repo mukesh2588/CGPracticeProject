@@ -8,7 +8,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 public class ImplicitWaitPract {
 
 	public static void main(String[] args) {
-		System.setProperty("webdriver.chrome.driver", "C:\\Users\\mkhedkar\\eclipse-workspace\\ChromeDriver\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "src/main/resources/drivers/chromedriver.exe");
 
 		WebDriver driver=new ChromeDriver();
 
