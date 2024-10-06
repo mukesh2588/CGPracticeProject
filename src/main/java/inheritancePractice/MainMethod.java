@@ -8,6 +8,9 @@ public class MainMethod {
 		ClassA objA=new ClassA();
 		ClassB objB=new ClassB();
 		ClassC objC=new ClassC();
+		
+		ClassB objAB=new ClassC();
+		
 
 		System.out.println(objA.addition(5, 7));
 		

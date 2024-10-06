@@ -6,6 +6,7 @@ public class CompareSting {
         String str2 = "mukesh";
         String str3 = new String("Mukesh");
         String str4 = new String("Mukesh");
+        String str5="Mukesh";
 
         if (str1 == str2) {
             System.out.println("Strig is equal 1");
@@ -16,12 +17,23 @@ public class CompareSting {
         if (str1.equals(str2)) {
             System.out.println("Strig is equal 3");
         }
+        if(str1==str5)
+        {
+        	System.out.println("String 1 is equal to String 5");
+        }
+        	
 
         //check if Strig is equal : 3 and 4
         System.out.println(str3 == str4);
 
        //check if Strig is equal : 3 and 4
         System.out.println(str3.equals(str4));
+        
+        System.out.println("Address of str1: "+System.identityHashCode(str1));
+        System.out.println("Address of str5: "+System.identityHashCode(str5));
+        System.out.println("Address of str2: "+System.identityHashCode(str2));
+        System.out.println("Address of str3: "+System.identityHashCode(str3));
+        System.out.println("Address of str4: "+System.identityHashCode(str4));
 
 
     }

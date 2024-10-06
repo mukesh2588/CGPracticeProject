@@ -24,7 +24,8 @@ public class AlertAccept {
 		
 		Thread.sleep(2000);
 		driver.switchTo().alert().accept();
-		
+		driver.close();
+					
 		
 
 	}

@@ -30,7 +30,7 @@ public class Draggable {
 		act.dragAndDropBy(src, 50, 50).pause(2000)
 		.dragAndDropBy(src, 100, 100).pause(2000).dragAndDropBy(src, 140, 140).perform();
 		
-		
+	
 
 
 	}

@@ -32,6 +32,7 @@ public class AlertGetMessage {
 		String alertmsgExpected="Do you really want to delete this Customer?";
 		
 		System.out.println(alertmsgExpected.equalsIgnoreCase(alertMsg));
+	
 		
 		
 

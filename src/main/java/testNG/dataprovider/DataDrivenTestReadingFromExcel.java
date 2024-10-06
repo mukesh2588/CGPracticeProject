@@ -33,11 +33,15 @@ public class DataDrivenTestReadingFromExcel
 		
 		driver.get("https://opensource-demo.orangehrmlive.com/");
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		driver.findElement(By.name("txtUsername")).sendKeys(username);
-		driver.findElement(By.name("txtPassword")).sendKeys(password);
-		driver.findElement(By.id("btnLogin")).click();
+//		driver.findElement(By.name("txtUsername")).sendKeys(username);
+//		driver.findElement(By.name("txtPassword")).sendKeys(password);
+//		driver.findElement(By.id("btnLogin")).click();
+		driver.findElement(By.name("username")).sendKeys(username);
+		driver.findElement(By.name("password")).sendKeys(password);
+		driver.findElement(By.xpath("//button[@type='submit']")).click();
 
-		Assert.assertEquals(driver.getCurrentUrl(), "https://opensource-demo.orangehrmlive.com/index.php/dashboard");
+//		Assert.assertEquals(driver.getCurrentUrl(), "https://opensource-demo.orangehrmlive.com/index.php/dashboard");
+		Assert.assertEquals(driver.getCurrentUrl(), "https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index");
 
 	}
 
